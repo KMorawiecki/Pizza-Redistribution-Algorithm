@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
 #include<vector>
+#include <cstdlib>
+#include <ctime>
 #include "Pizza.h"
 #include "Algorithm.h"
 using namespace std;
 
 int main()
 {
+	srand(time(NULL));
 	int k;
 	cout << "Podaj ilosc klientow" << endl;
 	cin >> k;
@@ -18,13 +21,25 @@ int main()
 	int iterMax = 200;
 	
 	Algorithm alg(minPizz);
-	vector<Pizza> first = alg.GenerateFirst();
+	vector<Pizza> first;
+	for (int i = 0; i < minPizz; i++)
+	{
+		vector<ingredient> ing;
+		vector<ingredient> pusty;
+		ing.push_back(ser);
+		ing.push_back(rukola);
+		ing.push_back(szynka);
+		Pizza pizza(1, ing, pusty, pusty);
+		first.push_back(pizza);
+	}
+	//vector<Pizza> first = alg.GenerateFirst();
 	for (int i = 0; i < first.size(); i++)
 		cout << first[i];
-	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood();
+	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first);
 	for (int i = 0; i < nei.size(); i++)
 		for (int j = 0; j < nei[i].size(); j++)
 			cout << nei[i][j];
+	cin >> k;
 	/*
 	for (int i = minPizz; i < maxPizz; i++)
 	{

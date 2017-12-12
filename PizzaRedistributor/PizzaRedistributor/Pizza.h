@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 enum ingredient
@@ -11,7 +13,15 @@ enum ingredient
 	ser,
 	pieczarki,
 	szynka,
-	INGSIZE = 3
+	rukola,
+	ananas,
+	sos,
+	boczek,
+	salami,
+	kurczak,
+	cebula,
+	papryka,
+	INGSIZE = 11
 };
 
 class Pizza

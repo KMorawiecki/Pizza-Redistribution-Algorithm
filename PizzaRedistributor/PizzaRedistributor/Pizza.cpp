@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Pizza.h"
 using namespace std;
 
@@ -60,6 +62,30 @@ int Pizza::countCalories()
 			case szynka:
 				cal += 12;
 				break;
+			case rukola:
+				cal += 12;
+				break;
+			case ananas:
+				cal += 12;
+				break;
+			case sos:
+				cal += 12;
+				break;
+			case boczek:
+				cal += 12;
+				break;
+			case salami:
+				cal += 12;
+				break;
+			case kurczak:
+				cal += 12;
+				break;
+			case cebula:
+				cal += 12;
+				break; 
+			case papryka:
+					cal += 12;
+					break;
 			default:
 				break;
 		}
@@ -84,6 +110,30 @@ int Pizza::countPrice()
 		case szynka:
 			p += 8;
 			break;
+		case rukola:
+			p += 8;
+			break;
+		case ananas:
+			p += 8;
+			break; 
+		case sos:
+			p += 8;
+			break;
+		case boczek:
+			p += 8;
+			break;
+		case salami:
+			p += 8;
+			break;
+		case kurczak:
+			p += 8;
+			break;
+		case cebula:
+			p += 8;
+			break;
+		case papryka:
+			p += 8;
+			break;
 		default:
 			break;
 		}
@@ -95,7 +145,8 @@ int Pizza::countPrice()
 
 ostream& operator << (ostream& stream, const Pizza& pizza)
 {
-	cout << endl << "Skladniki:" << endl;
+	stream << endl << "Skladniki:" << endl;
 	for (int i = 0; i < pizza.ing.size(); i++)
-		cout << pizza.ing[i] << ", ";
+		stream << pizza.ing[i] << ", ";
+	return stream;
 }
