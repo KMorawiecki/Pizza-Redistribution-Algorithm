@@ -92,3 +92,10 @@ int Pizza::countPrice()
 
 	return p;
 }
+
+ostream& operator << (ostream& stream, const Pizza& pizza)
+{
+	cout << endl << "Skladniki:" << endl;
+	for (int i = 0; i < pizza.ing.size(); i++)
+		cout << pizza.ing[i] << ", ";
+}

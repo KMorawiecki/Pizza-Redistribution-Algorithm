@@ -1,0 +1,7 @@
+﻿  Algorithm.cpp
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(18): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(23): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  PizzaRedistributor.vcxproj -> C:\Users\Asus\Documents\AGH\BO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe

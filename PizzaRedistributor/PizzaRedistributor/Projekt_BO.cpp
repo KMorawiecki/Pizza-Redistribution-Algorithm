@@ -17,6 +17,15 @@ int main()
 	int maxPizz = k + floor(k / 2);
 	int iterMax = 200;
 	
+	Algorithm alg(minPizz);
+	vector<Pizza> first = alg.GenerateFirst();
+	for (int i = 0; i < first.size(); i++)
+		cout << first[i];
+	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood();
+	for (int i = 0; i < nei.size(); i++)
+		for (int j = 0; j < nei[i].size(); j++)
+			cout << nei[i][j];
+	/*
 	for (int i = minPizz; i < maxPizz; i++)
 	{
 		int iter = 0;
@@ -77,5 +86,6 @@ int main()
 			i++;
 		}
 	}
+	*/
 }
 

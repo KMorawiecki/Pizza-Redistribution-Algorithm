@@ -8,9 +8,10 @@ using namespace std;
 
 enum ingredient
 {
-	ser, 
-	pieczarki, 
-	szynka
+	ser,
+	pieczarki,
+	szynka,
+	INGSIZE = 3
 };
 
 class Pizza
@@ -28,6 +29,7 @@ public:
 	int countPrice();
 	int IngValue();
 	float Aspiration();
+	friend ostream& operator<< (ostream& stream, const Pizza& pizza);
 };
 
 #endif
