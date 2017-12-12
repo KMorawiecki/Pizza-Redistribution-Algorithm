@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
 #include<vector>
+#include <cstdlib>
+#include <ctime>
 #include "Pizza.h"
 #include "Algorithm.h"
 using namespace std;
 
 int main()
 {
+	srand(time(NULL));
 	int k;
 	cout << "Podaj ilosc klientow" << endl;
 	cin >> k;
