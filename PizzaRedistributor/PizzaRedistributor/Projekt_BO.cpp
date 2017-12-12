@@ -20,7 +20,7 @@ int main()
 	for (int i = minPizz; i < maxPizz; i++)
 	{
 		int iter = 0;
-		Algorithm alg;
+		Algorithm alg(i);
 		vector<Pizza> s0 = alg.GenerateFirst();
 		vector<Pizza> best = s0;
 		int bestAsp = 0;
@@ -73,7 +73,7 @@ int main()
 				else
 					s0 = bestCandidate;
 			}
-			alg.UpgradeTaboo();
+			alg.UpdateTaboo();
 			i++;
 		}
 	}

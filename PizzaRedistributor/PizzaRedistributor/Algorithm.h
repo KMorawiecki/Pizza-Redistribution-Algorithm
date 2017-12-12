@@ -11,14 +11,14 @@ class Algorithm {
 
 public:
 	int pizzasNumber;
-
-	Algorithm();
 	vector<vector<Pizza>> tabooList;
+
+	Algorithm(int pizza_cnt);
 	vector<vector<Pizza>> GenerateNeighbourhood(vector<Pizza> current);
 	vector<vector<Pizza>> GenerateTabooNeighbourhood(vector<Pizza> current);
 	vector<Pizza> GenerateFirst();
 	vector<Pizza> PickBest();
-	void UpgradeTaboo();
+	void UpdateTaboo();
 
 };
 
