@@ -19,7 +19,7 @@ public:
 	vector<vector<Pizza>> GenerateNeighbourhood(vector<Pizza> current);
 	vector<vector<Pizza>> GenerateTabooNeighbourhood(vector<Pizza> current);
 	vector<Pizza> GenerateFirst();
-	vector<Pizza> PickBest();
+	vector<Pizza> PickBest(vector<vector<Pizza>> neighbourhood);
 	void UpdateTaboo();
 
 };

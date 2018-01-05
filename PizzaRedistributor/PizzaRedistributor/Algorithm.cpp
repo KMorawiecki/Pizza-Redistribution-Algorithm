@@ -103,3 +103,21 @@ vector<Pizza> Algorithm :: GenerateFirst()
 	return ret;
 }
 
+vector<Pizza> Algorithm::PickBest(vector<vector<Pizza>> neighbourhood)
+{
+	vector<Pizza> ret = neighbourhood[0];
+	vector<float> suma;
+	for (int k = 0; k < neighbourhood[0].size(); k++) //obliczenie dla pierwszego elementu
+	{
+		suma[0] = +Aspiration(neighbourhood[0][k]);
+	}
+	for (int i = 1; i < this->pizzasNumber; i++)
+	{
+		for (int j = 0; j < neighbourhood[i].size(); j++)
+		{
+			suma[i] = +Aspiration(neighbourhood[i][j]);
+		}
+		if (suma[i] > suma[i - 1])
+			ret = neighbourhood[i];
+	}
+}
