@@ -42,7 +42,7 @@ int Pizza::IngValue()
 float Pizza::Aspiration()
 {
 	float mod = 0.5;
-	float value = mod*(this->price) + this->IngValue();
+	float value = mod * (this->price) + this->IngValue();
 	return value;
 }
 
@@ -57,34 +57,34 @@ int Pizza::countCalories()
 				cal += 10;
 				break;
 			case pieczarki:
-				cal += 5;
+				cal += 8;
 				break;
 			case szynka:
-				cal += 12;
+				cal += 8;
 				break;
 			case rukola:
-				cal += 12;
+				cal += 6;
 				break;
 			case ananas:
-				cal += 12;
+				cal += 7;
 				break;
 			case sos:
-				cal += 12;
+				cal += 10;
 				break;
 			case boczek:
-				cal += 12;
+				cal += 10;
 				break;
 			case salami:
-				cal += 12;
+				cal += 10;
 				break;
 			case kurczak:
-				cal += 12;
+				cal += 10;
 				break;
 			case cebula:
-				cal += 12;
+				cal += 8;
 				break; 
 			case papryka:
-					cal += 12;
+					cal += 8;
 					break;
 			default:
 				break;
@@ -102,37 +102,37 @@ int Pizza::countPrice()
 		switch (ing[i])
 		{
 		case ser:
-			p += 13;
+			p += 10;
 			break;
 		case pieczarki:
-			p += 10;
+			p += 6;
 			break;
 		case szynka:
 			p += 8;
 			break;
 		case rukola:
-			p += 8;
+			p += 7;
 			break;
 		case ananas:
-			p += 8;
+			p += 5;
 			break; 
 		case sos:
-			p += 8;
+			p += 3;
 			break;
 		case boczek:
-			p += 8;
+			p += 9;
 			break;
 		case salami:
 			p += 8;
 			break;
 		case kurczak:
-			p += 8;
+			p += 10;
 			break;
 		case cebula:
-			p += 8;
+			p += 4;
 			break;
 		case papryka:
-			p += 8;
+			p += 4;
 			break;
 		default:
 			break;

@@ -107,17 +107,22 @@ vector<Pizza> Algorithm::PickBest(vector<vector<Pizza>> neighbourhood)
 {
 	vector<Pizza> ret = neighbourhood[0];
 	vector<float> suma;
+	suma.push_back(0);
 	for (int k = 0; k < neighbourhood[0].size(); k++) //obliczenie dla pierwszego elementu
 	{
-		suma[0] = +neighbourhood[0][k].Aspiration();
+		suma[0] +=neighbourhood[0][k].Aspiration();
 	}
-	for (int i = 1; i < this->pizzasNumber; i++)
+
+    for (int i = 1; i < neighbourhood.size(); i++) 
 	{
+		suma.push_back(0);							//dodanie kolejnego elementu w wektorze sum aspiracji
 		for (int j = 0; j < neighbourhood[i].size(); j++)
 		{
-			suma[i] = +neighbourhood[i][j].Aspiration();
+			suma[i] +=neighbourhood[i][j].Aspiration();  
 		}
+		//cout << "Aspiracja zestawu:" << suma[i] << endl;
 		if (suma[i] > suma[i - 1])
 			ret = neighbourhood[i];
 	}
+	return ret; 
 }

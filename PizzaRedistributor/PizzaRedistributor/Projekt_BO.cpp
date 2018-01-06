@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+
 	srand(time(NULL));
 	int k;
 	cout << "Podaj ilosc klientow" << endl;
@@ -37,8 +38,17 @@ int main()
 		cout << first[i];
 	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first);
 	for (int i = 0; i < nei.size(); i++)
+	{
+		cout << endl << endl;
 		for (int j = 0; j < nei[i].size(); j++)
-			cout << nei[i][j];
+			cout << nei[i][j] << endl;
+	}
+	//UWAGA! na ten moment w s¹siedztwie "nei" nie ma elementu "first" tak¿e on nie zostanie wybrany na pewno
+	vector<Pizza> opt = alg.PickBest(nei);
+	cout << endl << "A przed Panstwem NAJoptymalniejszy zestaw swiata" << endl;
+	for (int l = 0; l < opt.size(); l++)
+		cout << opt[l];
+    
 	cin >> k;
 	/*
 	for (int i = minPizz; i < maxPizz; i++)
