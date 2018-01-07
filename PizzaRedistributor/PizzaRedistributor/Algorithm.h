@@ -14,11 +14,10 @@ class Algorithm {
 
 public:
 	int pizzasNumber;
-	vector<pair<int, pair<ingredient, ingredient>>> tabooList;
+	vector<pair<int, pair<int, pair<ingredient, ingredient>>>> tabooList; // czas na liscie, numer pizzy, skladnik wymieniony, skladnik dodany
 
 	Algorithm(int pizza_cnt);
-	vector<vector<Pizza>> GenerateNeighbourhood(vector<Pizza> current);
-	vector<vector<Pizza>> GenerateTabooNeighbourhood(vector<Pizza> current);
+	vector<vector<Pizza>> GenerateNeighbourhood(vector<Pizza> current, bool notTaboo);
 	vector<Pizza> GenerateFirst();
 	vector<Pizza> PickBest(vector<vector<Pizza>> neighbourhood);
 	void UpdateTaboo(vector<Pizza> first, vector<Pizza> second);

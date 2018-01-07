@@ -37,7 +37,7 @@ int main()
 	//vector<Pizza> first = alg.GenerateFirst();
 	for (int i = 0; i < first.size(); i++)
 		cout << first[i];
-	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first);
+	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first, true);
 	for (int i = 0; i < nei.size(); i++)
 	{
 		cout << endl << endl;
@@ -49,13 +49,24 @@ int main()
 	cout << endl << "A przed Panstwem NAJoptymalniejszy zestaw swiata" << endl;
 	for (int l = 0; l < opt.size(); l++)
 		cout << opt[l];
-	system("PAUSE");
-	/*
-	for (int i = minPizz; i < maxPizz; i++)
+
+	/*for (int i = minPizz; i < maxPizz; i++)
 	{
 		int iter = 0;
 		Algorithm alg(i);
-		vector<Pizza> s0 = alg.GenerateFirst();
+		vector<Pizza> s0;
+		for (int j = 0; j < i; j++)
+		{
+			vector<ingredient> ing;
+			vector<ingredient> pusty;
+			ing.push_back(ser);
+			ing.push_back(pieczarki);
+			ing.push_back(szynka);
+			ing.push_back(ananas);
+			Pizza pizza(1, ing, pusty, pusty);
+			s0.push_back(pizza);
+		}
+		//vector<Pizza> s0 = alg.GenerateFirst();
 		vector<Pizza> best = s0;
 		int bestAsp = 0;
 		//TODO: przypisac wlasciwy bestAsp
@@ -63,7 +74,7 @@ int main()
 		while (iter < iterMax)
 		{
 			vector<Pizza> bestCandidate;
-			vector<vector<Pizza>> neighbourhood = alg.GenerateNeighbourhood(s0);
+			vector<vector<Pizza>> neighbourhood = alg.GenerateNeighbourhood(s0, true);
 			int lowestAsp = 1000;
 			for (int j = 0; j < neighbourhood.size(); j++)
 			{
@@ -78,7 +89,7 @@ int main()
 			}
 
 			vector<Pizza> bestTabooCandidate;
-			vector<vector<Pizza>> tabooNeighbourhood = alg.GenerateTabooNeighbourhood(s0);
+			vector<vector<Pizza>> tabooNeighbourhood = alg.GenerateNeighbourhood(s0, false);
 			int lowestTabooAsp = 1000;
 			for (int j = 0; j < tabooNeighbourhood.size(); j++)
 			{
@@ -110,7 +121,7 @@ int main()
 			alg.UpdateTaboo();
 			i++;
 		}
-	}
-	*/
+	}*/
+	system("PAUSE");
 }
 
