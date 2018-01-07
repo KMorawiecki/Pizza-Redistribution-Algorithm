@@ -110,25 +110,23 @@ vector<Pizza> Algorithm :: GenerateFirst()
 		for (int j = 0; j < ingNumber; j++)
 		{
 			int whichING = (rand() % 11);
-			for (int k = 0; k <= used.size(); k++)
+			vectorING.push_back(ingredient(whichING));
+			used.push_back(whichING);
+		/*	if (j > 0)
 			{
-				if (whichING == used[k])
+				for(int k=0;k<used.size();k++)
 				{
-					usedB = true;
+					if (whichING == used[k])
+						usedB = true;
 				}
-			}
-
-			if (usedB == true) 
-			{
-				usedB = false;
-				j--;
-			}
-			else
-			{
-				vectorING.push_back(ingredient(whichING));
-				used.push_back(whichING);
-			}
+				if (usedB = true)
+				{
+					usedB = false;
+					j--;
+				}
+			}*/
 		}
+
 		vector<ingredient> emptyvec;
 		Pizza current(1, vectorING, emptyvec, emptyvec);
 		ret.push_back(current);
@@ -140,12 +138,13 @@ vector<Pizza> Algorithm::PickBest(vector<vector<Pizza>> neighbourhood)
 {
 	vector<Pizza> ret = neighbourhood[0];
 	vector<float> suma;
+	float suma_akt;
 	suma.push_back(0);
 	for (int k = 0; k < neighbourhood[0].size(); k++) //obliczenie dla pierwszego elementu
 	{
 		suma[0] +=neighbourhood[0][k].Aspiration();
 	}
-
+	suma_akt = suma[0];
     for (int i = 1; i < neighbourhood.size(); i++) 
 	{
 		suma.push_back(0);							//dodanie kolejnego elementu w wektorze sum aspiracji
@@ -153,9 +152,14 @@ vector<Pizza> Algorithm::PickBest(vector<vector<Pizza>> neighbourhood)
 		{
 			suma[i] +=neighbourhood[i][j].Aspiration();  
 		}
-		//cout << "Aspiracja zestawu:" << suma[i] << endl;
-		if (suma[i] > suma[i - 1])
+		if (suma[i] < suma_akt)
+		{
 			ret = neighbourhood[i];
+			suma_akt = suma[i];
+		}
+		//cout<< "suma: "<<i-1<<" " << suma[i - 1] << " suma: "<<i<<" " << suma[i] << endl;
+		//cout <<i<<" aktualny"<< ret[0] << endl;
+		//cout << endl;
 	}
 	return ret; 
 }

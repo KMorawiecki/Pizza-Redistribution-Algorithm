@@ -22,7 +22,7 @@ int main()
 	int iterMax = 200;
 	
 	Algorithm alg(minPizz);
-	vector<Pizza> first;
+	/*vector<Pizza> first;
 	for (int i = 0; i < minPizz; i++)
 	{
 		vector<ingredient> ing;
@@ -33,11 +33,11 @@ int main()
 		ing.push_back(ananas);
 		Pizza pizza(1, ing, pusty, pusty);
 		first.push_back(pizza);
-	}
-	//vector<Pizza> first = alg.GenerateFirst();
-	for (int i = 0; i < first.size(); i++)
-		cout << first[i];
-	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first, true);
+	}*/
+	vector<Pizza> first_rand = alg.GenerateFirst();
+	for (int i = 0; i < first_rand.size(); i++)
+		cout << first_rand[i];
+	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first_rand, true);
 	for (int i = 0; i < nei.size(); i++)
 	{
 		cout << endl << endl;
