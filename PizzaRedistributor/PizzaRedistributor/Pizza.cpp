@@ -145,8 +145,10 @@ int Pizza::countPrice()
 
 ostream& operator << (ostream& stream, const Pizza& pizza)
 {
+	Pizza secpiz = pizza;
 	stream << endl << "Skladniki:" << endl;
 	for (int i = 0; i < pizza.ing.size(); i++)
 		stream << pizza.ing[i] << ", ";
+	stream << "Aspiration: " << secpiz.Aspiration() << " Price: " << secpiz.price;
 	return stream;
 }

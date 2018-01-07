@@ -20,7 +20,7 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur)
 
 	for (int i = 0; i < cur.size(); i++)
 	{
-		for (int k = 0; k < INGSIZE; k++)
+		for (int k = 1; k < INGSIZE; k++)
 		{
 			ingredient newing = ingredient(k);
 			for (int j = 0; j < cur[i].ing.size(); j++)
@@ -32,6 +32,7 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur)
 					vector<Pizza> element = cur;
 					element[i].ing.erase(element[i].ing.begin() + j);
 					element[i].ing.push_back(newing);
+					element[i].price = element[i].countPrice();
 					nei.push_back(element);
 				}
 			else
@@ -42,10 +43,11 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur)
 			{
 				vector<Pizza> element = cur;
 				element[i].ing.erase(element[i].ing.begin() + k);
+				element[i].price = element[i].countPrice();
 				nei.push_back(element);
 			}
 		if (cur[i].ing.size() != 7)
-			for (int k = 0; k < INGSIZE; k++)
+			for (int k = 1; k < INGSIZE; k++)
 			{
 				ingredient newing = ingredient(k);
 				for (int j = 0; j < cur[i].ing.size(); j++)
@@ -55,6 +57,7 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur)
 				{
 					vector<Pizza> element = cur;
 					element[i].ing.push_back(newing);
+					element[i].price = element[i].countPrice();
 					nei.push_back(element);
 				}
 				else
@@ -125,4 +128,38 @@ vector<Pizza> Algorithm::PickBest(vector<vector<Pizza>> neighbourhood)
 			ret = neighbourhood[i];
 	}
 	return ret; 
+}
+
+void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
+{
+	vector<pair<int, pair<ingredient, ingredient>>>::iterator iter = tabooList.begin();
+	while(iter != tabooList.end())
+	{
+		iter->first -= 1;
+		if (iter->first == 0)
+			iter = tabooList.erase(iter);
+		else
+			iter++;
+	}
+	for (int i = 0; i < first.size(); i++)
+	{
+		vector<ingredient> fing = first[i].ing;
+		vector<ingredient> sing = second[i].ing;
+
+		for (int j = 0; j < fing.size(); j++)
+			for (int k = 0; k < sing.size(); k++)
+				if (fing[j] == sing[k])
+				{
+					fing.erase(fing.begin() + j);
+					sing.erase(sing.begin() + k);
+					j--;
+					k--;
+				}
+		if (fing.empty())
+			tabooList.push_back(make_pair(20, make_pair(nic, sing[0])));
+		else if (sing.empty())
+			tabooList.push_back(make_pair(20, make_pair(fing[0], nic)));
+		else
+			tabooList.push_back(make_pair(20, make_pair(fing[0], sing[0])));
+	}			
 }

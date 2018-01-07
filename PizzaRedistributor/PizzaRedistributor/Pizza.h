@@ -10,6 +10,7 @@ using namespace std;
 
 enum ingredient
 {
+	nic,
 	ser,
 	pieczarki,
 	szynka,
@@ -21,7 +22,7 @@ enum ingredient
 	kurczak,
 	cebula,
 	papryka,
-	INGSIZE = 11
+	INGSIZE = 12
 };
 
 class Pizza

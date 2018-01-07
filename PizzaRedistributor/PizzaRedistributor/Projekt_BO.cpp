@@ -28,8 +28,9 @@ int main()
 		vector<ingredient> ing;
 		vector<ingredient> pusty;
 		ing.push_back(ser);
-		ing.push_back(rukola);
+		ing.push_back(pieczarki);
 		ing.push_back(szynka);
+		ing.push_back(ananas);
 		Pizza pizza(1, ing, pusty, pusty);
 		first.push_back(pizza);
 	}
@@ -48,8 +49,7 @@ int main()
 	cout << endl << "A przed Panstwem NAJoptymalniejszy zestaw swiata" << endl;
 	for (int l = 0; l < opt.size(); l++)
 		cout << opt[l];
-    
-	cin >> k;
+	system("PAUSE");
 	/*
 	for (int i = minPizz; i < maxPizz; i++)
 	{
