@@ -104,7 +104,7 @@ vector<Pizza> Algorithm :: GenerateFirst()
 	for (int i = 0; i < this->pizzasNumber; i++)
 	{
 		int ingNumber = (rand() % 5) + 3;    //losujemy liczbe skladnikow z przedzial 3 do 7
-		cout << "Ilosc sk³adnikow" << ingNumber << endl;
+		cout << "Ilosc sk³adnikow: " << ingNumber << endl;
 		vector<ingredient> vectorING;
 		vector<int> used;
 		bool usedB = false;

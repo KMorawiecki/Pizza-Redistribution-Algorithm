@@ -49,8 +49,9 @@ int main()
 	cout << endl << "A przed Panstwem NAJoptymalniejszy zestaw swiata" << endl;
 	for (int l = 0; l < opt.size(); l++)
 		cout << opt[l];
-
-	/*for (int i = minPizz; i < maxPizz; i++)
+	cin >> k;
+	/*
+	for (int i = minPizz; i < maxPizz; i++)
 	{
 		int iter = 0;
 		Algorithm alg(i);
@@ -121,7 +122,7 @@ int main()
 			alg.UpdateTaboo();
 			i++;
 		}
-	}*/
-	system("PAUSE");
+	}
+	system("PAUSE");*/
 }
 
