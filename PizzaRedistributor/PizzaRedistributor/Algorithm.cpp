@@ -101,32 +101,33 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 vector<Pizza> Algorithm :: GenerateFirst()
 {
 	vector<Pizza> ret;
-	bool usedB = false;
 	for (int i = 0; i < this->pizzasNumber; i++)
 	{
 		int ingNumber = (rand() % 5) + 3;    //losujemy liczbe skladnikow z przedzial 3 do 7
+		cout << "Ilosc sk³adnikow" << ingNumber << endl;
 		vector<ingredient> vectorING;
 		vector<int> used;
-		for (int j = 0; j < ingNumber; j++)
-		{
-			int whichING = (rand() % 11);
-			vectorING.push_back(ingredient(whichING));
-			used.push_back(whichING);
-		/*	if (j > 0)
+		bool usedB = false;
+		used.push_back(0);
+			do
 			{
-				for(int k=0;k<used.size();k++)
+				usedB = false;
+				int whichING = (rand() % 11) + 1;
+				for (int k = 0; k < used.size(); k++)
 				{
 					if (whichING == used[k])
+					{
 						usedB = true;
+					}
 				}
-				if (usedB = true)
+				if (usedB == false)
 				{
-					usedB = false;
-					j--;
+					vectorING.push_back(ingredient(whichING));
+					used.push_back(ingredient(whichING));
 				}
-			}*/
-		}
-
+			}
+			while (vectorING.size()<ingNumber);
+			
 		vector<ingredient> emptyvec;
 		Pizza current(1, vectorING, emptyvec, emptyvec);
 		ret.push_back(current);
