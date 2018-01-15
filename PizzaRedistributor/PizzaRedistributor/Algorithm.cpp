@@ -10,7 +10,8 @@ using namespace std;
 
 Algorithm::Algorithm(int pc) : pizzasNumber(pc)
 {
-
+	vector<pair<int, pair<int, pair<ingredient, ingredient>>>> tList;
+	tabooList = tList;
 }
 
 vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool notTaboo)
@@ -104,7 +105,6 @@ vector<Pizza> Algorithm :: GenerateFirst()
 	for (int i = 0; i < this->pizzasNumber; i++)
 	{
 		int ingNumber = (rand() % 5) + 3;    //losujemy liczbe skladnikow z przedzial 3 do 7
-		cout << "Ilosc sk³adnikow: " << ingNumber << endl;
 		vector<ingredient> vectorING;
 		vector<int> used;
 		bool usedB = false;
@@ -176,20 +176,31 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 		else
 			iter++;
 	}
+
 	for (int i = 0; i < first.size(); i++)
 	{
 		vector<ingredient> fing = first[i].ing;
 		vector<ingredient> sing = second[i].ing;
+		int j = 0;
+		int k = 0;
 
-		for (int j = 0; j < fing.size(); j++)
-			for (int k = 0; k < sing.size(); k++)
+		while (j < fing.size())
+		{
+			while (j < fing.size())
+			{
 				if (fing[j] == sing[k])
 				{
+					cout << "0"; //xD - dziala jak sie to zostawis
 					fing.erase(fing.begin() + j);
 					sing.erase(sing.begin() + k);
-					j--;
-					k--;
 				}
+				else
+				{
+					j++;
+					k++;
+				}
+			}
+		}
 		if (fing.empty())
 			tabooList.push_back(make_pair(20, make_pair(i, make_pair(nic, sing[0]))));
 		else if (sing.empty())

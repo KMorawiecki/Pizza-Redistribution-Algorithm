@@ -20,58 +20,17 @@ int main()
 	int minPizz = k;
 	int maxPizz = k + floor(k / 2);
 	int iterMax = 200;
-	
-	Algorithm alg(minPizz);
-	/*vector<Pizza> first;
-	for (int i = 0; i < minPizz; i++)
-	{
-		vector<ingredient> ing;
-		vector<ingredient> pusty;
-		ing.push_back(ser);
-		ing.push_back(pieczarki);
-		ing.push_back(szynka);
-		ing.push_back(ananas);
-		Pizza pizza(1, ing, pusty, pusty);
-		first.push_back(pizza);
-	}*/
-	vector<Pizza> first_rand = alg.GenerateFirst();
-	for (int i = 0; i < first_rand.size(); i++)
-		cout << first_rand[i];
-	vector<vector<Pizza>> nei = alg.GenerateNeighbourhood(first_rand, true);
-	for (int i = 0; i < nei.size(); i++)
-	{
-		cout << endl << endl;
-		for (int j = 0; j < nei[i].size(); j++)
-			cout << nei[i][j] << endl;
-	}
-	//UWAGA! na ten moment w s¹siedztwie "nei" nie ma elementu "first" tak¿e on nie zostanie wybrany na pewno
-	vector<Pizza> opt = alg.PickBest(nei);
-	cout << endl << "A przed Panstwem NAJoptymalniejszy zestaw swiata" << endl;
-	for (int l = 0; l < opt.size(); l++)
-		cout << opt[l];
-	cin >> k;
-	/*
-	for (int i = minPizz; i < maxPizz; i++)
-	{
+	int i = minPizz;
+
+	//for (int i = minPizz; i < maxPizz; i++)
+	//{
 		int iter = 0;
 		Algorithm alg(i);
-		vector<Pizza> s0;
-		for (int j = 0; j < i; j++)
-		{
-			vector<ingredient> ing;
-			vector<ingredient> pusty;
-			ing.push_back(ser);
-			ing.push_back(pieczarki);
-			ing.push_back(szynka);
-			ing.push_back(ananas);
-			Pizza pizza(1, ing, pusty, pusty);
-			s0.push_back(pizza);
-		}
-		//vector<Pizza> s0 = alg.GenerateFirst();
+		vector<Pizza> s0 = alg.GenerateFirst();
 		vector<Pizza> best = s0;
 		int bestAsp = 0;
 		//TODO: przypisac wlasciwy bestAsp
-		vector<Pizza> tabu;
+
 		while (iter < iterMax)
 		{
 			vector<Pizza> bestCandidate;
@@ -106,23 +65,31 @@ int main()
 
 			if (lowestAsp < lowestTabooAsp)
 			{
-				s0 = bestCandidate;
+				
+				alg.UpdateTaboo(s0, bestCandidate); //tu siedzi skurwiel
+				s0 = bestCandidate;		
 				if (lowestAsp < bestAsp)
 					best = bestCandidate;
+
 			}
 			else
 			{
 				if (lowestTabooAsp < bestAsp) {
+					alg.UpdateTaboo(s0, bestTabooCandidate);
 					best = bestTabooCandidate;
 					s0 = bestTabooCandidate;
 				}
 				else
+				{
+					alg.UpdateTaboo(s0, bestCandidate);
 					s0 = bestCandidate;
+				}
 			}
-			alg.UpdateTaboo();
-			i++;
+			iter++;
 		}
-	}
-	system("PAUSE");*/
+		for(int p = 0; p < best.size(); p++)
+			cout << "Ilosc pizz: " << i << "Skladniki: " << best[p];
+	//}
+	system("PAUSE");
 }
 
