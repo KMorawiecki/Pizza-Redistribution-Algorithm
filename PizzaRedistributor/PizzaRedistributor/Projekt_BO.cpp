@@ -66,7 +66,7 @@ int main()
 			if (lowestAsp < lowestTabooAsp)
 			{
 				
-				alg.UpdateTaboo(s0, bestCandidate); //tu siedzi skurwiel
+				alg.UpdateTaboo(s0, bestCandidate);
 				s0 = bestCandidate;		
 				if (lowestAsp < bestAsp)
 					best = bestCandidate;
@@ -88,7 +88,7 @@ int main()
 			iter++;
 		}
 		for(int p = 0; p < best.size(); p++)
-			cout << "Ilosc pizz: " << i << "Skladniki: " << best[p];
+			cout << "Ilosc pizz: " << i << " " << best[p];
 	//}
 	system("PAUSE");
 }

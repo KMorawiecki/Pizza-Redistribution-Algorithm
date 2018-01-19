@@ -158,9 +158,6 @@ vector<Pizza> Algorithm::PickBest(vector<vector<Pizza>> neighbourhood)
 			ret = neighbourhood[i];
 			suma_akt = suma[i];
 		}
-		//cout<< "suma: "<<i-1<<" " << suma[i - 1] << " suma: "<<i<<" " << suma[i] << endl;
-		//cout <<i<<" aktualny"<< ret[0] << endl;
-		//cout << endl;
 	}
 	return ret; 
 }
@@ -181,31 +178,53 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 	{
 		vector<ingredient> fing = first[i].ing;
 		vector<ingredient> sing = second[i].ing;
-		int j = 0;
-		int k = 0;
+		int findex;
+		int sindex;
+		bool repeatingIng;
+		bool similarity = true;
 
-		while (j < fing.size())
-		{
-			while (j < fing.size())
+		if(fing.size() >= sing.size())
+			for(int f = 0; f < fing.size(); f++)
 			{
-				if (fing[j] == sing[k])
+				repeatingIng = false;
+				for (int s = 0; s < sing.size(); s++)
+					if (fing[f] == sing[s])
+						repeatingIng = true;
+				if (repeatingIng == false)
 				{
-					cout << "0"; //xD - dziala jak sie to zostawis
-					fing.erase(fing.begin() + j);
-					sing.erase(sing.begin() + k);
+					findex = f;
+					similarity = false;
+					break;
 				}
 				else
-				{
-					j++;
-					k++;
-				}
+					repeatingIng = true;
 			}
+
+		if (fing.size() <= sing.size())
+			for (int s = 0; s < sing.size(); s++)
+			{
+				repeatingIng = false;
+				for (int f = 0; f < sing.size(); f++)
+					if (fing[f] == sing[s])
+						repeatingIng = true;
+				if (repeatingIng == false)
+				{
+					sindex = s;
+					similarity = false;
+					break;
+				}
+				else
+					repeatingIng = true;
+			}
+
+		if (!similarity)
+		{
+			if (fing.size() < sing.size())
+				tabooList.push_back(make_pair(20, make_pair(i, make_pair(nic, sing[sindex]))));
+			else if (fing.size() > sing.size())
+				tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[findex], nic))));
+			else
+				tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[findex], sing[sindex]))));
 		}
-		if (fing.empty())
-			tabooList.push_back(make_pair(20, make_pair(i, make_pair(nic, sing[0]))));
-		else if (sing.empty())
-			tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[0], nic))));
-		else
-			tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[0], sing[0]))));
 	}			
 }
