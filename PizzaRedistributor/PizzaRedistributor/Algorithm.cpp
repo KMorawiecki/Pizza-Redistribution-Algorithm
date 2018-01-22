@@ -99,7 +99,7 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 	return nei;
 }
 
-vector<Pizza> Algorithm :: GenerateFirst()
+vector<Pizza> Algorithm :: GenerateFirst(vector<ingredient> wantedIng, vector<ingredient> bannedIng)
 {
 	vector<Pizza> ret;
 	for (int i = 0; i < this->pizzasNumber; i++)
@@ -128,8 +128,7 @@ vector<Pizza> Algorithm :: GenerateFirst()
 			}
 			while (vectorING.size()<ingNumber);
 			
-		vector<ingredient> emptyvec;
-		Pizza current(1, vectorING, emptyvec, emptyvec);
+		Pizza current(1, vectorING, bannedIng, wantedIng);
 		ret.push_back(current);
 	}
 	return ret;

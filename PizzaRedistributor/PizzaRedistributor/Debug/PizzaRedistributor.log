@@ -1,23 +1,11 @@
-﻿  Algorithm.cpp
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(22): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(27): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(31): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(33): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(53): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(55): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(64): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(74): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(79): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(88): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(116): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(129): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(144): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(149): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(152): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(180): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(190): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(193): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(207): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(210): warning C4018: '<': signed/unsigned mismatch
+﻿  Projekt_BO.cpp
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(53): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(71): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(74): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(75): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(86): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(90): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(122): warning C4018: '<': signed/unsigned mismatch
   PizzaRedistributor.vcxproj -> C:\Users\Asus\Documents\AGH\BO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe

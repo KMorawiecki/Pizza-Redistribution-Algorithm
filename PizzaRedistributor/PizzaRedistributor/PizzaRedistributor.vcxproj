@@ -112,6 +112,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
+    <ClInclude Include="mapmaker.h" />
     <ClInclude Include="Pizza.h" />
   </ItemGroup>
   <ItemGroup>

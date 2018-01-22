@@ -5,18 +5,50 @@
 #include <ctime>
 #include "Pizza.h"
 #include "Algorithm.h"
+#include "mapmaker.h"
 using namespace std;
 
 int main()
 {
+	static const string keys[] = {"ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka"};
+	static const ingredient values[] = {ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka};
+	static map<string, ingredient> table(make_map(keys, values));
 
 	srand(time(NULL));
 	int k;
-	cout << "Podaj ilosc klientow" << endl;
+	vector<vector<ingredient>> wanted;		//wektor porzadanych dla poszczegolnych klientow
+	vector<vector<ingredient>> unwanted;
+	string ingr;
+
+	cout << "Podaj ilosc klientow:" << endl;
 	cin >> k;
-	cout << "Podaj skladniki nieporzadane" << endl;
-	cout << "Podaj skladniki porzadane" << endl;
-	//TODO: zrobic wektor porzadanych i nieporzadanych
+	int client = 1;
+
+	while (client < k + 1)
+	{
+		vector<ingredient> tempWanted;
+		vector<ingredient> tempUnwanted;
+		cout << "Podaj skladniki nieporzadane dla " << client << " klienta: (q = wyjscie)" << endl;
+		cin >> ingr;
+		while (ingr != "q")
+		{
+			tempUnwanted.push_back(table.find(ingr)->second);
+			cin >> ingr;
+		}
+
+		cout << "Podaj skladniki porzadane dla " << client << " klienta: (q = wyjscie)" << endl;
+		cin >> ingr;
+		while (ingr != "q")
+		{
+			tempWanted.push_back(table.find(ingr)->second);
+			cin >> ingr;
+		}
+		wanted.push_back(tempWanted);
+		unwanted.push_back(tempUnwanted);
+		client++;
+	}
+	cout << endl;
+
 	int minPizz = k;
 	int maxPizz = k + floor(k / 2);
 	int iterMax = 200;
@@ -26,7 +58,7 @@ int main()
 	//{
 		int iter = 0;
 		Algorithm alg(i);
-		vector<Pizza> s0 = alg.GenerateFirst();
+		vector<Pizza> s0 = alg.GenerateFirst(wanted[0], unwanted[0]); //TODO: jakos rozroznic pizze dla poszczegolnych klientow
 		vector<Pizza> best = s0;
 		int bestAsp = 0;
 		//TODO: przypisac wlasciwy bestAsp

@@ -18,7 +18,7 @@ public:
 
 	Algorithm(int pizza_cnt);
 	vector<vector<Pizza>> GenerateNeighbourhood(vector<Pizza> current, bool notTaboo);
-	vector<Pizza> GenerateFirst();
+	vector<Pizza> GenerateFirst(vector<ingredient> wantedIng, vector<ingredient> bannedIng);
 	vector<Pizza> PickBest(vector<vector<Pizza>> neighbourhood);
 	void UpdateTaboo(vector<Pizza> first, vector<Pizza> second);
 };
