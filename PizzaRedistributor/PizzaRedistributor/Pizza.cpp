@@ -111,7 +111,7 @@ int Pizza::countPrice()
 			p += 10;
 			break;
 		case pieczarki:
-			p += 6;
+			p += 600;
 			break;
 		case szynka:
 			p += 8;

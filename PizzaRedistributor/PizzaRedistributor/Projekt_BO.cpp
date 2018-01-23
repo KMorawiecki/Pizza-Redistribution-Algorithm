@@ -59,7 +59,7 @@ int main()
 	wanted.push_back(wan);
 	*/
 
-	int iterMax = 200;
+	int iterMax = 400;
 	int iter = 0;
 	Algorithm alg(minPizz);
 	vector<Pizza> s0 = alg.GenerateFirst(wanted, unwanted);

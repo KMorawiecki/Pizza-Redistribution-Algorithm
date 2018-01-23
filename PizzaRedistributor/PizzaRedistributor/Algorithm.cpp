@@ -201,7 +201,7 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 			for (int s = 0; s < sing.size(); s++)
 			{
 				repeatingIng = false;
-				for (int f = 0; f < sing.size(); f++)
+				for (int f = 0; f < fing.size(); f++)
 					if (fing[f] == sing[s])
 						repeatingIng = true;
 				if (repeatingIng == false)
@@ -217,11 +217,11 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 		if (!similarity)
 		{
 			if (fing.size() < sing.size())
-				tabooList.push_back(make_pair(20, make_pair(i, make_pair(nic, sing[sindex]))));
+				tabooList.push_back(make_pair(60, make_pair(i, make_pair(nic, sing[sindex]))));
 			else if (fing.size() > sing.size())
-				tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[findex], nic))));
+				tabooList.push_back(make_pair(60, make_pair(i, make_pair(fing[findex], nic))));
 			else
-				tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[findex], sing[sindex]))));
+				tabooList.push_back(make_pair(60, make_pair(i, make_pair(fing[findex], sing[sindex]))));
 		}
 	}			
 }
