@@ -3,6 +3,7 @@
 #include<vector>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 #include "Pizza.h"
 #include "Algorithm.h"
 #include "mapmaker.h"
@@ -19,10 +20,13 @@ int main()
 	vector<vector<ingredient>> wanted;		//wektor porzadanych dla poszczegolnych klientow
 	vector<vector<ingredient>> unwanted;
 	string ingr;
-
+	fstream outplik;
+	outplik.open("pliczek.txt", ios::in | ios::out);
 	cout << "Podaj ilosc klientow:" << endl;
 	cin >> k;
 	int client = 1;
+
+	
 
 	while (client < k + 1)
 	{
@@ -60,7 +64,7 @@ int main()
 		Algorithm alg(i);
 		vector<Pizza> s0 = alg.GenerateFirst(wanted[0], unwanted[0]); //TODO: jakos rozroznic pizze dla poszczegolnych klientow
 		vector<Pizza> best = s0;
-		int bestAsp = 0;
+		int bestAsp = 1000;
 		//TODO: przypisac wlasciwy bestAsp
 
 		while (iter < iterMax)
@@ -118,6 +122,7 @@ int main()
 				}
 			}
 			iter++;
+			alg.zapis(outplik, s0[0].Aspiration());
 		}
 		for(int p = 0; p < best.size(); p++)
 			cout << "Ilosc pizz: " << i << " " << best[p];

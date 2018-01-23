@@ -1,9 +1,34 @@
-﻿  Pizza.cpp
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(35): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(58): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(106): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(157): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+﻿  Projekt_BO.cpp
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(18): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(57): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(75): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(78): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(79): warning C4244: "+=": konwersja z "float" do "int", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(90): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(93): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(94): warning C4244: "+=": konwersja z "float" do "int", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(127): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Algorithm.cpp
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(23): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(28): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(32): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(34): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(44): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(54): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(56): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(65): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(75): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(80): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(89): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(117): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(130): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(144): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(149): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(152): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(177): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(187): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(190): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(204): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\algorithm.cpp(207): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Generowanie kodu...
   PizzaRedistributor.vcxproj -> C:\Users\piotr\OneDrive\Pulpit\pizzaBO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe
