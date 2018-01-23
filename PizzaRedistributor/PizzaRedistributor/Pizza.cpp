@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include<map>
+#include <map>
 #include "mapmaker.h"
 #include "Pizza.h"
 using namespace std;
@@ -18,7 +18,7 @@ Pizza::Pizza(int s, vector<ingredient> i, vector<ingredient> b, vector<ingredien
 
 int Pizza::IngValue()
 {
-	int value = 0;
+	int value = 1;
 	int punish = 5;
 	int reward = 3;
 
@@ -26,7 +26,7 @@ int Pizza::IngValue()
 	{
 		for (int j = 0; j < this->bannedIng.size(); j++)
 		{
-			if (ing[i] == bannedIng[j])
+			if (this->ing[i] == bannedIng[j])
 			{
 				value += punish;
 				break;
@@ -34,7 +34,7 @@ int Pizza::IngValue()
 		}
 		for (int k = 0; k < this->wantedIng.size(); k++)
 		{
-			if (ing[i] == wantedIng[k])
+			if (this->ing[i] == wantedIng[k])
 			{
 				value -= reward;
 				break;

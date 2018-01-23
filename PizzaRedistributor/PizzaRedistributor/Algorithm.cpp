@@ -18,11 +18,13 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 {
 	vector<vector<Pizza>> nei;
 	bool badIng = false;
+	bool notTabooTemp;
 
 	for (int i = 0; i < cur.size(); i++)
 	{
 		for (int k = 1; k < INGSIZE; k++)
 		{
+			notTabooTemp = notTaboo;
 			ingredient newing = ingredient(k);
 			for (int j = 0; j < cur[i].ing.size(); j++)
 				if (cur[i].ing[j] == newing)
@@ -34,8 +36,8 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 						if (tabooList[t].second.first == i)
 							if (tabooList[t].second.second.first == cur[i].ing[j])
 								if (tabooList[t].second.second.second == newing)
-									notTaboo = !notTaboo;
-					if (notTaboo == true)
+									notTabooTemp = !notTabooTemp;
+					if (notTabooTemp == true)
 					{
 						vector<Pizza> element = cur;
 						element[i].ing.erase(element[i].ing.begin() + j);
@@ -43,8 +45,6 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 						element[i].price = element[i].countPrice();
 						nei.push_back(element);
 					}
-					else
-						notTaboo = !notTaboo;
 				}
 			else
 				badIng = false;
@@ -52,24 +52,24 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 		if (cur[i].ing.size() != 3)
 			for (int k = 0; k < cur[i].ing.size(); k++)
 			{
+				notTabooTemp = notTaboo;
 				for (int t = 0; t < tabooList.size(); t++)
 					if (tabooList[t].second.first == i)
 						if (tabooList[t].second.second.first == cur[i].ing[k])
 							if (tabooList[t].second.second.second == nic)
-								notTaboo = !notTaboo;
-				if (notTaboo == true)
+								notTabooTemp = !notTabooTemp;
+				if (notTabooTemp == true)
 				{
 					vector<Pizza> element = cur;
 					element[i].ing.erase(element[i].ing.begin() + k);
 					element[i].price = element[i].countPrice();
 					nei.push_back(element);
 				}
-				else
-					notTaboo = !notTaboo;
 			}
 		if (cur[i].ing.size() != 7)
 			for (int k = 1; k < INGSIZE; k++)
 			{
+				notTabooTemp = notTaboo;
 				ingredient newing = ingredient(k);
 				for (int j = 0; j < cur[i].ing.size(); j++)
 					if (cur[i].ing[j] == newing)
@@ -80,7 +80,7 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 						if (tabooList[t].second.first == i)
 							if (tabooList[t].second.second.first == nic)
 								if (tabooList[t].second.second.second == newing)
-									notTaboo = !notTaboo;
+									notTabooTemp = !notTabooTemp;
 					if (notTaboo == true)
 					{
 						vector<Pizza> element = cur;
@@ -88,18 +88,15 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 						element[i].price = element[i].countPrice();
 						nei.push_back(element);
 					}
-					else
-						notTaboo = !notTaboo;
 				}
 				else
 					badIng = false;
 			}
 	}
-
 	return nei;
 }
 
-vector<Pizza> Algorithm :: GenerateFirst(vector<ingredient> wantedIng, vector<ingredient> bannedIng)
+vector<Pizza> Algorithm :: GenerateFirst(vector<vector<ingredient>> wantedIng, vector<vector<ingredient>> bannedIng)
 {
 	vector<Pizza> ret;
 	for (int i = 0; i < this->pizzasNumber; i++)
@@ -128,7 +125,7 @@ vector<Pizza> Algorithm :: GenerateFirst(vector<ingredient> wantedIng, vector<in
 			}
 			while (vectorING.size()<ingNumber);
 			
-		Pizza current(1, vectorING, bannedIng, wantedIng);
+		Pizza current(1, vectorING, bannedIng[i], wantedIng[i]);
 		ret.push_back(current);
 	}
 	return ret;

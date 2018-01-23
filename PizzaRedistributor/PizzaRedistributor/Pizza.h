@@ -35,7 +35,7 @@ public:
 	vector<ingredient> bannedIng;
 	vector<ingredient> wantedIng;
 
-	Pizza(int s, vector<ingredient> i, vector<ingredient> b, vector<ingredient> w);
+	Pizza(int s, vector<ingredient> i, vector<ingredient> b, vector<ingredient> w); //s = size
 	int countCalories();
 	int countPrice();
 	int IngValue();
