@@ -1,8 +1,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include<map>
+#include "mapmaker.h"
 #include "Pizza.h"
 using namespace std;
+
+static const string keys[] = { "ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka" };
+static const ingredient values[] = { ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka };
+static map<string, ingredient> table(make_map(keys, values));
 
 Pizza::Pizza(int s, vector<ingredient> i, vector<ingredient> b, vector<ingredient> w) : size(s), ing(i), bannedIng(b), wantedIng(w)
 {
@@ -146,9 +152,16 @@ int Pizza::countPrice()
 ostream& operator << (ostream& stream, const Pizza& pizza)
 {
 	Pizza secpiz = pizza;
+	map<string, ingredient>::iterator iter = table.begin();
 	stream << endl << "Skladniki:" << endl;
 	for (int i = 0; i < pizza.ing.size(); i++)
-		stream << pizza.ing[i] << ", ";
+		for (iter; iter != table.end(); ++iter)
+			if (iter->second == pizza.ing[i])
+			{
+				stream << iter->first << ", ";
+				iter = table.begin();
+				break;
+			}
 	stream << "Aspiration: " << secpiz.Aspiration() << " Price: " << secpiz.price;
 	return stream;
 }

@@ -8,12 +8,12 @@
 #include "mapmaker.h"
 using namespace std;
 
+static const string keys[] = { "ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka" };
+static const ingredient values[] = { ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka };
+static map<string, ingredient> table(make_map(keys, values));
+
 int main()
 {
-	static const string keys[] = {"ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka"};
-	static const ingredient values[] = {ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka};
-	static map<string, ingredient> table(make_map(keys, values));
-
 	srand(time(NULL));
 	int k;
 	vector<vector<ingredient>> wanted;		//wektor porzadanych dla poszczegolnych klientow

@@ -1,11 +1,9 @@
-﻿  Projekt_BO.cpp
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(53): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(71): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(74): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(75): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(86): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(89): warning C4018: '<': signed/unsigned mismatch
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(90): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\asus\documents\agh\bo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(122): warning C4018: '<': signed/unsigned mismatch
-  PizzaRedistributor.vcxproj -> C:\Users\Asus\Documents\AGH\BO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe
+﻿  Pizza.cpp
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(16): warning C4244: "=": konwersja z "int" do "float", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(25): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(35): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(58): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(106): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\pizza.cpp(157): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  PizzaRedistributor.vcxproj -> C:\Users\piotr\OneDrive\Pulpit\pizzaBO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe
