@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstdio>
+#include <fstream>
 #include "Pizza.h"
 #include "Algorithm.h"
 using namespace std;
@@ -224,3 +225,13 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 		}
 	}			
 }
+
+void Algorithm::zapis(fstream &plik, float asp)
+{
+	if (plik.good() == true)
+	{
+		plik << asp <<endl;
+	}
+	else cout << "Problem z otworzeniem pliku do zapisu" << endl;
+
+};

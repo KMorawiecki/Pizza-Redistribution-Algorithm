@@ -21,6 +21,7 @@ public:
 	vector<Pizza> GenerateFirst(vector<vector<ingredient>> wantedIng, vector<vector<ingredient>> bannedIng);
 	vector<Pizza> PickBest(vector<vector<Pizza>> neighbourhood);
 	void UpdateTaboo(vector<Pizza> first, vector<Pizza> second);
+	void zapis(fstream & plik, float asp);
 };
 
 #endif
