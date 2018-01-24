@@ -22,7 +22,12 @@ enum ingredient
 	kurczak,
 	cebula,
 	papryka,
-	INGSIZE = 12
+	tunczyk,
+	pomidor,
+	feta,
+	szpinak,
+	kielbasa,
+	INGSIZE = 17
 };
 
 class Pizza

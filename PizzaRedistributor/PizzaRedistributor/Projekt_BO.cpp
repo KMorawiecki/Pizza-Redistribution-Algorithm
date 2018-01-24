@@ -9,8 +9,8 @@
 #include "mapmaker.h"
 using namespace std;
 
-static const string keys[] = { "ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka" };
-static const ingredient values[] = { ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka };
+static const string keys[] = { "ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka","tunczyk","pomidor","feta","szpinak","kielbasa" };
+static const ingredient values[] = { ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka,tunczyk,pomidor,feta,szpinak,kielbasa };
 static map<string, ingredient> table(make_map(keys, values));
 
 int main()
@@ -52,16 +52,8 @@ int main()
 		client++;
 	}
 	cout << endl;
-	
-	/*
-	minPizz = 1;
-	vector<ingredient> unwan = { rukola, ananas };
-	unwanted.push_back(unwan);
-	vector<ingredient> wan = { boczek, cebula, szynka };
-	wanted.push_back(wan);
-	*/
 
-	int iterMax = 400;
+	int iterMax = 200;
 	int iter = 0;
 	Algorithm alg(minPizz);
 	vector<Pizza> s0 = alg.GenerateFirst(wanted, unwanted);
@@ -71,7 +63,11 @@ int main()
 
 	while (iter < iterMax)
 	{
+		vector<ingredient> AddIngs = { ser, sos, pomidor };
+		Pizza JIC(1, AddIngs, unwanted[0], wanted[0]);	//Just in case
+
 		vector<Pizza> bestCandidate;
+		bestCandidate.push_back(JIC);
 		vector<vector<Pizza>> neighbourhood = alg.GenerateNeighbourhood(s0, searchParameter, true);
 		float lowestAsp = 1000;
 		for (int j = 0; j < neighbourhood.size(); j++)
@@ -87,6 +83,7 @@ int main()
 		}
 
 		vector<Pizza> bestTabooCandidate;
+		bestTabooCandidate.push_back(JIC);
 		vector<vector<Pizza>> tabooNeighbourhood = alg.GenerateNeighbourhood(s0, searchParameter, false);
 		float lowestTabooAsp = 1000;
 		for (int j = 0; j < tabooNeighbourhood.size(); j++)

@@ -138,7 +138,7 @@ vector<Pizza> Algorithm :: GenerateFirst(vector<vector<ingredient>> wantedIng, v
 			do
 			{
 				usedB = false;
-				int whichING = (rand() % 11) + 1;
+				int whichING = (rand() % 17) + 1;
 				for (int k = 0; k < used.size(); k++)
 				{
 					if (whichING == used[k])

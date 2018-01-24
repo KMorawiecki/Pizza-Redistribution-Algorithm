@@ -1,1 +1,8 @@
-﻿  PizzaRedistributor.vcxproj -> C:\Users\Asus\Documents\AGH\BO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe
+﻿  Projekt_BO.cpp
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(20): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(73): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(76): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(89): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(92): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\piotr\onedrive\pulpit\pizzabo\pizza-redistribution-algorithm\pizzaredistributor\pizzaredistributor\projekt_bo.cpp(132): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  PizzaRedistributor.vcxproj -> C:\Users\piotr\OneDrive\Pulpit\pizzaBO\Pizza-Redistribution-Algorithm\PizzaRedistributor\Debug\PizzaRedistributor.exe

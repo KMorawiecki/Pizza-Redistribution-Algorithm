@@ -6,8 +6,8 @@
 #include "Pizza.h"
 using namespace std;
 
-static const string keys[] = { "ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka" };
-static const ingredient values[] = { ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka };
+static const string keys[] = { "ser","pieczarki","szynka","rukola","ananas","sos","boczek","salami","kurczak","cebula","papryka","tunczyk","pomidor","feta","szpinak","kielbasa" };
+static const ingredient values[] = { ser,pieczarki,szynka,rukola,ananas,sos,boczek,salami,kurczak,cebula,papryka,tunczyk,pomidor,feta,szpinak,kielbasa};
 static map<string, ingredient> table(make_map(keys, values));
 
 Pizza::Pizza(int s, vector<ingredient> i, vector<ingredient> b, vector<ingredient> w) : size(s), ing(i), bannedIng(b), wantedIng(w)
@@ -47,7 +47,7 @@ int Pizza::IngValue()
 
 float Pizza::Aspiration()
 {
-	float mod = 0.7;
+	float mod = 0.5;
 	float value = mod * (this->price) + this->IngValue();
 	return value;
 }
@@ -60,25 +60,25 @@ int Pizza::countCalories()
 		switch (ing[i])
 		{
 			case ser:
-				cal += 100;
+				cal += 400;
 				break;
 			case pieczarki:
-				cal += 80;
+				cal += 130;
 				break;
 			case szynka:
 				cal += 300;
 				break;
 			case rukola:
-				cal += 60;
+				cal += 80;
 				break;
 			case ananas:
-				cal += 75;
+				cal += 105;
 				break;
 			case sos:
-				cal += 30;
+				cal += 330;
 				break;
 			case boczek:
-				cal += 400;
+				cal += 500;
 				break;
 			case salami:
 				cal += 350;
@@ -87,10 +87,25 @@ int Pizza::countCalories()
 				cal += 300;
 				break;
 			case cebula:
-				cal += 100;
+				cal += 150;
 				break; 
 			case papryka:
-				cal += 90;
+				cal += 180;
+				break;
+			case tunczyk:
+				cal += 250;
+				break;
+			case pomidor:
+				cal += 170;
+				break;
+			case feta:
+				cal += 230;
+				break;
+			case szpinak:
+				cal += 130;
+				break;
+			case kielbasa:
+				cal += 380;
 				break;
 			default:
 				break;
@@ -111,7 +126,7 @@ int Pizza::countPrice()
 			p += 12;
 			break;
 		case pieczarki:
-			p += 6;
+			p += 16;
 			break;
 		case szynka:
 			p += 15;
@@ -129,7 +144,7 @@ int Pizza::countPrice()
 			p += 17;
 			break;
 		case salami:
-			p += 11;
+			p += 16;
 			break;
 		case kurczak:
 			p += 16;
@@ -138,7 +153,22 @@ int Pizza::countPrice()
 			p += 8;
 			break;
 		case papryka:
-			p += 4;
+			p += 7;
+			break;
+		case tunczyk:
+			p += 17;
+			break;
+		case feta:
+			p += 11;
+			break;
+		case pomidor:
+			p += 6;
+			break;
+		case kielbasa:
+			p += 8;
+			break;
+		case szpinak:
+			p += 8;
 			break;
 		default:
 			break;
