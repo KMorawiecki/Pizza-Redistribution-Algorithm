@@ -234,4 +234,14 @@ void Algorithm::zapis(fstream &plik, float asp)
 	}
 	else cout << "Problem z otworzeniem pliku do zapisu" << endl;
 
-};
+}
+
+float Algorithm::sum_asp(vector<Pizza> pizze)
+{
+	float suma = 0.0;
+	for (int i = 0; i < pizze.size(); i++)
+	{
+		suma += pizze[i].Aspiration();
+	}
+	return suma;
+}

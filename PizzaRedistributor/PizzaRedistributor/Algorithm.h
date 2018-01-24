@@ -22,6 +22,7 @@ public:
 	vector<Pizza> PickBest(vector<vector<Pizza>> neighbourhood);
 	void UpdateTaboo(vector<Pizza> first, vector<Pizza> second);
 	void zapis(fstream & plik, float asp);
+	float sum_asp(vector<Pizza> pizze);
 };
 
 #endif

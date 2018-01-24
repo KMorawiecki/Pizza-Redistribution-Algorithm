@@ -126,7 +126,9 @@ int main()
 			}
 		}
 		iter++;
-		alg.zapis(outplik, s0[0].Aspiration());
+		float sum = alg.sum_asp(s0);
+		
+		alg.zapis(outplik, sum);
 	}
 	for(int p = 0; p < best.size(); p++)
 		cout << best[p];
