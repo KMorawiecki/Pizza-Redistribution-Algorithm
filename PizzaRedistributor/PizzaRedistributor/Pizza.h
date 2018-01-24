@@ -40,6 +40,7 @@ public:
 	int countPrice();
 	int IngValue();
 	float Aspiration();
+	bool CheckForCalories();
 	friend ostream& operator<< (ostream& stream, const Pizza& pizza);
 };
 

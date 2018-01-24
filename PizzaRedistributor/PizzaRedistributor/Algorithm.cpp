@@ -15,9 +15,10 @@ Algorithm::Algorithm(int pc) : pizzasNumber(pc)
 	tabooList = tList;
 }
 
-vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool notTaboo)
+vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, int sparam, bool notTaboo)
 {
 	vector<vector<Pizza>> nei;
+	int parameter = 0;
 	bool badIng = false;
 	bool notTabooTemp;
 
@@ -44,7 +45,16 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 						element[i].ing.erase(element[i].ing.begin() + j);
 						element[i].ing.push_back(newing);
 						element[i].price = element[i].countPrice();
-						nei.push_back(element);
+						element[i].kcal = element[i].countCalories();
+						if (element[i].CheckForCalories())
+						{
+							parameter++;
+							if (parameter == sparam)
+							{
+								nei.push_back(element);
+								parameter = 0;
+							}
+						}
 					}
 				}
 			else
@@ -64,7 +74,16 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 					vector<Pizza> element = cur;
 					element[i].ing.erase(element[i].ing.begin() + k);
 					element[i].price = element[i].countPrice();
-					nei.push_back(element);
+					element[i].kcal = element[i].countCalories();
+					if (element[i].CheckForCalories())
+					{
+						parameter++;
+						if (parameter == sparam)
+						{
+							nei.push_back(element);
+							parameter = 0;
+						}
+					}
 				}
 			}
 		if (cur[i].ing.size() != 7)
@@ -87,7 +106,16 @@ vector<vector<Pizza>> Algorithm::GenerateNeighbourhood(vector<Pizza> cur, bool n
 						vector<Pizza> element = cur;
 						element[i].ing.push_back(newing);
 						element[i].price = element[i].countPrice();
-						nei.push_back(element);
+						element[i].kcal = element[i].countCalories();
+						if (element[i].CheckForCalories())
+						{
+							parameter++;
+							if (parameter == sparam)
+							{
+								nei.push_back(element);
+								parameter = 0;
+							}
+						}
 					}
 				}
 				else
@@ -217,11 +245,11 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 		if (!similarity)
 		{
 			if (fing.size() < sing.size())
-				tabooList.push_back(make_pair(20, make_pair(i, make_pair(nic, sing[sindex]))));
+				tabooList.push_back(make_pair(60, make_pair(i, make_pair(nic, sing[sindex]))));
 			else if (fing.size() > sing.size())
-				tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[findex], nic))));
+				tabooList.push_back(make_pair(60, make_pair(i, make_pair(fing[findex], nic))));
 			else
-				tabooList.push_back(make_pair(20, make_pair(i, make_pair(fing[findex], sing[sindex]))));
+				tabooList.push_back(make_pair(60, make_pair(i, make_pair(fing[findex], sing[sindex]))));
 		}
 	}			
 }

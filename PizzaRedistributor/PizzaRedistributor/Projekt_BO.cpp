@@ -15,6 +15,8 @@ static map<string, ingredient> table(make_map(keys, values));
 
 int main()
 {
+	int searchParameter = 3;
+
 	srand(time(NULL));
 	int minPizz;
 	vector<vector<ingredient>> wanted;		//wektor porzadanych dla poszczegolnych klientow

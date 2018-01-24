@@ -47,7 +47,7 @@ int Pizza::IngValue()
 
 float Pizza::Aspiration()
 {
-	float mod = 0.5;
+	float mod = 0.7;
 	float value = mod * (this->price) + this->IngValue();
 	return value;
 }
@@ -60,38 +60,38 @@ int Pizza::countCalories()
 		switch (ing[i])
 		{
 			case ser:
-				cal += 10;
+				cal += 100;
 				break;
 			case pieczarki:
-				cal += 8;
+				cal += 80;
 				break;
 			case szynka:
-				cal += 8;
+				cal += 300;
 				break;
 			case rukola:
-				cal += 6;
+				cal += 60;
 				break;
 			case ananas:
-				cal += 7;
+				cal += 75;
 				break;
 			case sos:
-				cal += 10;
+				cal += 30;
 				break;
 			case boczek:
-				cal += 10;
+				cal += 400;
 				break;
 			case salami:
-				cal += 10;
+				cal += 350;
 				break;
 			case kurczak:
-				cal += 10;
+				cal += 300;
 				break;
 			case cebula:
-				cal += 8;
+				cal += 100;
 				break; 
 			case papryka:
-					cal += 8;
-					break;
+				cal += 90;
+				break;
 			default:
 				break;
 		}
@@ -108,34 +108,34 @@ int Pizza::countPrice()
 		switch (ing[i])
 		{
 		case ser:
-			p += 10;
+			p += 12;
 			break;
 		case pieczarki:
 			p += 6;
 			break;
 		case szynka:
-			p += 8;
+			p += 15;
 			break;
 		case rukola:
 			p += 7;
 			break;
 		case ananas:
-			p += 5;
+			p += 10;
 			break; 
 		case sos:
-			p += 3;
+			p += 5;
 			break;
 		case boczek:
-			p += 9;
+			p += 17;
 			break;
 		case salami:
-			p += 8;
+			p += 11;
 			break;
 		case kurczak:
-			p += 10;
+			p += 16;
 			break;
 		case cebula:
-			p += 4;
+			p += 8;
 			break;
 		case papryka:
 			p += 4;
@@ -147,6 +147,13 @@ int Pizza::countPrice()
 	p *= size;
 
 	return p;
+}
+
+bool Pizza::CheckForCalories()
+{
+	if (kcal < 1000)
+		return false;
+	return true;
 }
 
 ostream& operator << (ostream& stream, const Pizza& pizza)
