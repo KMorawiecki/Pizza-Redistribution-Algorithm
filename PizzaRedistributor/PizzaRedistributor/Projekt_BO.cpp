@@ -61,7 +61,7 @@ int main()
 	wanted.push_back(wan);
 	*/
 
-	int iterMax = 200;
+	int iterMax = 400;
 	int iter = 0;
 	Algorithm alg(minPizz);
 	vector<Pizza> s0 = alg.GenerateFirst(wanted, unwanted);
@@ -72,7 +72,7 @@ int main()
 	while (iter < iterMax)
 	{
 		vector<Pizza> bestCandidate;
-		vector<vector<Pizza>> neighbourhood = alg.GenerateNeighbourhood(s0, true);
+		vector<vector<Pizza>> neighbourhood = alg.GenerateNeighbourhood(s0, searchParameter, true);
 		float lowestAsp = 1000;
 		for (int j = 0; j < neighbourhood.size(); j++)
 		{
@@ -87,7 +87,7 @@ int main()
 		}
 
 		vector<Pizza> bestTabooCandidate;
-		vector<vector<Pizza>> tabooNeighbourhood = alg.GenerateNeighbourhood(s0, false);
+		vector<vector<Pizza>> tabooNeighbourhood = alg.GenerateNeighbourhood(s0, searchParameter, false);
 		float lowestTabooAsp = 1000;
 		for (int j = 0; j < tabooNeighbourhood.size(); j++)
 		{
@@ -128,7 +128,9 @@ int main()
 			}
 		}
 		iter++;
-		alg.zapis(outplik, s0[0].Aspiration());
+		float sum = alg.sum_asp(s0);
+		
+		alg.zapis(outplik, sum);
 	}
 	for(int p = 0; p < best.size(); p++)
 		cout << best[p];

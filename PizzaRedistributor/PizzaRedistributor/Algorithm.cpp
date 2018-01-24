@@ -229,7 +229,7 @@ void Algorithm::UpdateTaboo(vector<Pizza> first, vector<Pizza> second)
 			for (int s = 0; s < sing.size(); s++)
 			{
 				repeatingIng = false;
-				for (int f = 0; f < sing.size(); f++)
+				for (int f = 0; f < fing.size(); f++)
 					if (fing[f] == sing[s])
 						repeatingIng = true;
 				if (repeatingIng == false)
@@ -262,4 +262,14 @@ void Algorithm::zapis(fstream &plik, float asp)
 	}
 	else cout << "Problem z otworzeniem pliku do zapisu" << endl;
 
-};
+}
+
+float Algorithm::sum_asp(vector<Pizza> pizze)
+{
+	float suma = 0.0;
+	for (int i = 0; i < pizze.size(); i++)
+	{
+		suma += pizze[i].Aspiration();
+	}
+	return suma;
+}
